@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { SquareProps } from './../types'
 
-export default function Square (props: SquareProps): JSX.Element {
+const Square: FunctionComponent<SquareProps> = (props) => {
   return (
     <button 
       className='square'
@@ -12,3 +12,5 @@ export default function Square (props: SquareProps): JSX.Element {
     </button>
   )
 }
+
+export default Square

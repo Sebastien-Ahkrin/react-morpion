@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FunctionComponent } from 'react'
 
 import Square from './square.component'
 
@@ -7,7 +7,7 @@ import { DefaultState, DefaultValues, NullOrString } from './../types'
 const DEFAULT_STATE: DefaultState = { board: Array(9).fill(null), isXNext: true }
 const DEFAULT_VALUES: DefaultValues = { X: 'X', O: 'O' }
 
-function calculateWinner (squares: Array<NullOrString>): string | null {
+function calculateWinner (squares: Array<NullOrString>): NullOrString {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -34,7 +34,7 @@ function getStatus (data: DefaultState): string {
   return (winner ? `${winner} à gagné` : `Next player: ${data.isXNext ? 'X' : 'O'}`)
 }
 
-export default function Board (): JSX.Element {
+const Board: FunctionComponent = () => {
   const [data, setData] = useState(DEFAULT_STATE)
   const status = getStatus(data)
 
@@ -72,5 +72,6 @@ export default function Board (): JSX.Element {
       </div>
     </div>
   )
-
 }
+
+export default Board
