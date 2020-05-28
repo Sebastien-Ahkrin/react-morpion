@@ -1,4 +1,4 @@
-type NullOrString = null | string
+export type NullOrString = null | string
 
 export interface DefaultState { 
   board: Array<NullOrString>, 

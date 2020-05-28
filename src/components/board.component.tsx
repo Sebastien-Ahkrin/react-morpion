@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 import Square from './square.component'
 
-import { DefaultState, DefaultValues } from './../types'
+import { DefaultState, DefaultValues, NullOrString } from './../types'
 
 const DEFAULT_STATE: DefaultState = { board: Array(9).fill(null), isXNext: true }
 const DEFAULT_VALUES: DefaultValues = { X: 'X', O: 'O' }
 
-function calculateWinner (squares: Array<null | string>): string | null {
+function calculateWinner (squares: Array<NullOrString>): string | null {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
