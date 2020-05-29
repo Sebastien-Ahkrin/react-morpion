@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from 'react'
+import React, { useState } from 'react'
 
 import Square from './square.component'
 
@@ -34,7 +34,7 @@ function getStatus (data: DefaultState): string {
   return (winner ? `${winner} à gagné` : `Next player: ${data.isXNext ? 'X' : 'O'}`)
 }
 
-const Board: FunctionComponent = () => {
+export default function Board (): JSX.Element {
   const [data, setData] = useState(DEFAULT_STATE)
   const status = getStatus(data)
 
@@ -73,5 +73,3 @@ const Board: FunctionComponent = () => {
     </div>
   )
 }
-
-export default Board

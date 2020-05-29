@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 
 import Board from './board.component'
 
-const Game: FunctionComponent = () => {
+export default function Game (): JSX.Element {
   return (
     <div className='game'>
       <div className='game-board'>
@@ -15,5 +15,3 @@ const Game: FunctionComponent = () => {
     </div>
   )
 }
-
-export default Game
